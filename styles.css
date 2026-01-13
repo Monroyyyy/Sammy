@@ -87,6 +87,12 @@ body {
     transform: translateY(0);
 }
 
+/* Mostrar imágenes cuando la galería se revele */
+.reveal.active .card-front img {
+    opacity: 1;
+    transform: scale(1);
+}
+
 .gallery img.active {
     opacity: 1;
     transform: scale(1);
@@ -155,9 +161,3 @@ body {
     line-height: 1.6;
     color: #444;
 }
-
-.reveal.active .card-front img {
-    opacity: 1;
-    transform: scale(1);
-}
-
