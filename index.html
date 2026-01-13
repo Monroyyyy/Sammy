@@ -1,28 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-	
-	<!-- BOTÓN Y AUDIO -->
-<button id="btn-music">🎵 Reproducir música</button>
-
-<audio id="mi-music" loop>
-    <source src="image/zayn.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const music = document.getElementById('mi-music');
-const btn = document.getElementById('btn-music');
-
-btn.addEventListener('click', () => {
-    if (music.paused) {
-        music.play();
-        btn.textContent = "🔇 Pausar música";
-    } else {
-        music.pause();
-        btn.textContent = "🎵 Reproducir música";
-    }
-});
-</script>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,6 +76,27 @@ btn.addEventListener('click', () => {
         </div>
     </div>
 
+	  <!-- AUDIO QUE SE REPRODUCE SOLO -->
+<audio id="mi-music" autoplay loop muted>
+    <source src="audio/zayn.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById('mi-music');
+
+// Al primer scroll, quitamos el mute para que se escuche
+window.addEventListener('scroll', () => {
+    if(music.muted){
+        music.muted = false;
+        music.play();
+    }
+}, { once: true });
+</script>
+
+</body>
+</html>
+
+
 
 </section>
 
@@ -125,6 +123,7 @@ btn.addEventListener('click', () => {
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
