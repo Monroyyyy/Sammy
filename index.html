@@ -78,25 +78,17 @@
         </div>
     </div>
 
-	  <!-- AUDIO QUE SE REPRODUCE SOLO -->
-<audio id="mi-music" autoplay loop muted>
-    <source src="audio/zayn.mp3" type="audio/mpeg">
-</audio>
+	<audio id="miMusica" src="audio/zayn.mp3" loop></audio>
 
 <script>
-const music = document.getElementById('mi-music');
-
-// Al primer scroll, quitamos el mute para que se escuche
-window.addEventListener('scroll', () => {
-    if(music.muted){
-        music.muted = false;
-        music.play();
-    }
-}, { once: true });
+window.addEventListener('load', () => {
+    const audio = document.getElementById('miMusica');
+    audio.volume = 0.5; // Ajusta el volumen si quieres
+    audio.play().catch(() => {
+        console.log("Autoplay bloqueado, intenta interactuar con la página");
+    });
+});
 </script>
-
-</body>
-</html>
 
 
 
@@ -127,6 +119,7 @@ window.addEventListener('scroll', () => {
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
