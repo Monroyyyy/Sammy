@@ -1,3 +1,4 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -5,69 +6,153 @@
     font-family: 'Arial', sans-serif;
 }
 
+/* FONDO */
 body {
-    background: linear-gradient(180deg, #f7f8fc, #eef1f7);
-    padding: 20px;
+    background: linear-gradient(120deg, #f5f7fa, #e8ecf1);
+    color: #333;
+    overflow-x: hidden;
 }
 
-.timeline {
-    max-width: 600px;
-    margin: auto;
+/* HERO */
+.hero {
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-/* ITEM */
-.item {
-    perspective: 1000px;
+.hero h1 {
+    font-size: 3rem;
 }
 
-/* TARJETA */
-.flip {
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* SECCIONES */
+.section {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* GALERÍA */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 60px 20px;
+}
+
+.gallery img {
     width: 100%;
-    height: 380px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.8s ease;
+}
+
+/* ANIMACIONES */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.fade-in.delay {
+    animation-delay: 0.8s;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery img.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* FLIP CARDS */
+.card {
+    perspective: 1200px;
+}
+
+.card-inner {
     position: relative;
+    width: 100%;
+    height: 350px;
+    transition: transform 0.9s;
     transform-style: preserve-3d;
-    transition: transform 0.8s ease;
     cursor: pointer;
 }
 
-/* ACTIVO */
-.flip.active {
+.card.flipped .card-inner {
     transform: rotateY(180deg);
 }
 
-/* CARAS */
-.front,
-.back {
+.card-front,
+.card-back {
     position: absolute;
     width: 100%;
     height: 100%;
+    border-radius: 14px;
     backface-visibility: hidden;
-    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* FRENTE */
-.front img {
+.card-front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
 /* ATRÁS */
-.back {
-    background: #ffffff;
+.card-back {
+    background: linear-gradient(135deg, #ffffff, #f1f3f7);
     transform: rotateY(180deg);
-    padding: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 25px;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.6;
     color: #444;
-    line-height: 1.5;
 }
+
