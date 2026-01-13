@@ -2,79 +2,96 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa, #e8ecf3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    background: linear-gradient(180deg, #f7f8fc, #eef1f7);
     padding: 20px;
-    width: 100%;
-    max-width: 1100px;
 }
 
-/* CONTENEDOR 3D */
-.card {
+/* CONTENEDOR PRINCIPAL (LISTA) */
+.timeline {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ITEM */
+.item {
     perspective: 1000px;
 }
 
-/* TARJETA */
-.card-inner {
-    position: relative;
+/* TARJETA FLIP */
+.flip {
     width: 100%;
-    height: 340px;
+    height: 380px;
+    position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s ease;
     cursor: pointer;
 }
 
-.card:hover .card-inner {
+/* ACTIVA (GIRADA) */
+.flip.active {
     transform: rotateY(180deg);
 }
 
 /* CARAS */
-.card-front,
-.card-back {
+.front,
+.back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 16px;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* FRENTE */
-.card-front {
-    background: #fff;
+/* FRENTE (IMAGEN) */
+.front {
+    background: #000;
 }
 
-.card-front img {
+.front img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* PC */
     display: block;
 }
 
-/* ATRÁS */
-.card-back {
+/* ATRÁS (TEXTO) */
+.back {
     background: #ffffff;
     transform: rotateY(180deg);
-    padding: 20px;
+    padding: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #444;
     font-size: 16px;
-    line-height: 1.4;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* 📱 AJUSTES PARA CELULAR */
+@media (max-width: 768px) {
+
+    .flip {
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+
+    .front img {
+        object-fit: contain; /* NO recorta en celular */
+        background: #000; /* bordes elegantes si sobran espacios */
+    }
+
+    .back {
+        font-size: 15px;
+        padding: 20px;
+    }
 }
