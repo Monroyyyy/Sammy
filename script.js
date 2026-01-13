@@ -1,17 +1,21 @@
-// OBSERVER PARA ANIMACIONES
+// REVEAL SCROLL
 const reveals = document.querySelectorAll('.reveal');
-const images = document.querySelectorAll('.gallery img');
 
-const observer = new IntersectionObserver(
-    entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    },
-    { threshold: 0.2 }
-);
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.2 });
 
 reveals.forEach(el => observer.observe(el));
-images.forEach(img => observer.observe(img));
+
+// FLIP CARDS
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+});
