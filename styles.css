@@ -170,20 +170,4 @@ video {
     margin: 20px auto;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
-#btn-music {
-    padding: 10px 20px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #f5f7fa, #e8ecf1);
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    margin: 20px auto;
-    display: block;
-}
-
-#btn-music:hover {
-    transform: scale(1.05);
-}
 
