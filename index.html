@@ -2,90 +2,44 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Ti ✨</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background:
-                linear-gradient(135deg, #fdfbfb, #ebedee),
-                url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #444;
-        }
-
-        .card {
-            background: rgba(255,255,255,0.95);
-            width: 90%;
-            max-width: 520px;
-            padding: 30px;
-            border-radius: 22px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            display: none;
-            animation: fadeIn 1s;
-        }
-
-        img {
-            width: 100%;
-            border-radius: 18px;
-            margin-bottom: 18px;
-        }
-
-        h1, h2 {
-            color: #c97a8c;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        button {
-            background: #c97a8c;
-            border: none;
-            color: white;
-            padding: 12px 26px;
-            border-radius: 30px;
-            font-size: 15px;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: #b5697b;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <!-- PASO 1 -->
-    <div class="card" id="step1" style="display:block;">
-        <h1>Hola ✨</h1>
-        <p>Hice esto con calma, con cariño…<br>solo quería compartirte algo bonito.</p>
-        <button onclick="nextStep(2)">Continuar</button>
-    </div>
+    <!-- HERO -->
+    <section class="hero">
+        <h1 class="fade-in">Para alguien especial</h1>
+        <p class="fade-in delay">Esto lo hice con cariño 🤍</p>
+    </section>
 
-    <!-- PASO 2 -->
-    <div class="card" id="step2">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="Luz suave">
-        <h2>Hay personas especiales</h2>
-        <p>Que sin darse cuenta, transmiten paz, dulzura y una luz muy bonita.</p>
-        <button onclick="nextStep(3)">Siguiente</button>
-    </div>
+    <!-- SECCIÓN TEXTO -->
+    <section class="section reveal">
+        <h2>Un poco de lo que siento</h2>
+        <p>
+            A veces no se trata de decir mucho,  
+            sino de sentirlo bonito.
+        </p>
+    </section>
 
-    <!-- PASO 3 -->
-    <div class="card" id="step3">
-        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Momentos">
-        <h2>Pequeños detalles</h2
+    <!-- GALERÍA -->
+    <section class="gallery reveal">
+        <img src="images/foto1.jpg" alt="foto 1">
+        <img src="images/foto2.jpg" alt="foto 2">
+        <img src="images/foto3.jpg" alt="foto 3">
+    </section>
 
+    <!-- SECCIÓN FINAL -->
+    <section class="section reveal">
+        <h2>Gracias por existir</h2>
+        <p>
+            Hay personas que llegan suave,  
+            como música bonita de fondo.
+        </p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
