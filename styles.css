@@ -1,6 +1,3 @@
-/* =========================
-   RESET GENERAL
-========================= */
 * {
     margin: 0;
     padding: 0;
@@ -8,169 +5,76 @@
     font-family: 'Arial', sans-serif;
 }
 
-/* =========================
-   BODY / FONDO
-========================= */
 body {
-    background: linear-gradient(120deg, #f5f7fa, #e8ecf1);
-    color: #333;
-    overflow-x: hidden;
-}
-
-/* =========================
-   HERO
-========================= */
-.hero {
     min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa, #e8ecf3);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 20px;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-}
-
-/* =========================
-   SECCIONES
-========================= */
-.section {
-    padding: 80px 20px;
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-}
-
-.section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.section p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* =========================
-   GALERÍA
-========================= */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    padding: 60px 20px;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1100px;
 }
 
-/* =========================
-   FLIP CARDS
-========================= */
+/* CONTENEDOR 3D */
 .card {
-    perspective: 1200px;
+    perspective: 1000px;
 }
 
+/* TARJETA */
 .card-inner {
     position: relative;
     width: 100%;
-    height: 360px;
-    transition: transform 0.9s ease;
+    height: 340px;
     transform-style: preserve-3d;
+    transition: transform 0.8s ease;
     cursor: pointer;
 }
 
-.card.flipped .card-inner {
+.card:hover .card-inner {
     transform: rotateY(180deg);
 }
 
-/* =========================
-   CARAS DE LA TARJETA
-========================= */
+/* CARAS */
 .card-front,
 .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 16px;
     backface-visibility: hidden;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* =========================
-   FRENTE (IMAGEN / VIDEO)
-========================= */
-.card-front img,
-.card-front video {
+/* FRENTE */
+.card-front {
+    background: #fff;
+}
+
+.card-front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-/* =========================
-   ATRÁS (HISTORIA)
-========================= */
+/* ATRÁS */
 .card-back {
-    background: linear-gradient(135deg, #ffffff, #f1f3f7);
+    background: #ffffff;
     transform: rotateY(180deg);
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 28px;
     text-align: center;
-    font-size: 1rem;
-    line-height: 1.6;
     color: #444;
-}
-
-/* =========================
-   ANIMACIONES SUAVES
-========================= */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1.5s forwards;
-}
-
-.fade-in.delay {
-    animation-delay: 0.8s;
-}
-
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* =========================
-   KEYFRAMES
-========================= */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .card-inner {
-        height: 300px;
-    }
+    font-size: 16px;
+    line-height: 1.4;
 }
