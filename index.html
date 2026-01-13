@@ -1,5 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
+	
+	<!-- BOTÓN Y AUDIO -->
+<button id="btn-music">🎵 Reproducir música</button>
+
+<audio id="mi-music" loop>
+    <source src="audio/musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById('mi-music');
+const btn = document.getElementById('btn-music');
+
+btn.addEventListener('click', () => {
+    if (music.paused) {
+        music.play();
+        btn.textContent = "🔇 Pausar música";
+    } else {
+        music.pause();
+        btn.textContent = "🎵 Reproducir música";
+    }
+});
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,27 +97,6 @@
             </div>
         </div>
     </div>
-	
-	<button id="btn-music">🎵 Reproducir música</button>
-
-	<audio id="mi-music" loop>
-    <source src="image/zayn.mp3" type="audio/mpeg">
-	</audio>
-
-	<script>
-	const music = document.getElementById('mi-music');
-	const btn = document.getElementById('btn-music');
-
-	btn.addEventListener('click', () => {
-    if (music.paused) {
-        music.play();
-        btn.textContent = "🔇 Pausar música";
-    } else {
-        music.pause();
-        btn.textContent = "🎵 Reproducir música";
-    }
-});
-</script>
 
 
 </section>
@@ -122,6 +124,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
