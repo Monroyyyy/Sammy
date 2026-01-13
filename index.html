@@ -74,87 +74,28 @@
             </div>
         </div>
     </div>
+	
+	<button id="btn-music">🎵 Reproducir música</button>
 
-</section>
+	<audio id="mi-music" loop>
+    <source src="image/zayn.mp3" type="audio/mpeg">
+	</audio>
 
-<!-- SECCIÓN VIDEO -->
-<section class="section reveal">
-    <h2><!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Ti ✨</title>
+	<script>
+	const music = document.getElementById('mi-music');
+	const btn = document.getElementById('btn-music');
 
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+	btn.addEventListener('click', () => {
+    if (music.paused) {
+        music.play();
+        btn.textContent = "🔇 Pausar música";
+    } else {
+        music.pause();
+        btn.textContent = "🎵 Reproducir música";
+    }
+});
+</script>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1 class="fade-in">Para alguien especial</h1>
-        <p class="fade-in delay">Esto lo hice con cariño 🤍</p>
-    </section>
-
-    <!-- SECCIÓN TEXTO -->
-    <section class="section reveal">
-        <h2>Un poco de lo que siento</h2>
-        <p>
-            A veces no se trata de decir mucho,  
-            sino de sentirlo bonito.
-        </p>
-    </section>
-
-    <!-- GALERÍA -->
-  <section class="gallery reveal">
-
-    <div class="card">
-        <div class="card-inner">
-            <div class="card-front">
-                <img src="images/Sam_con_flash.jpeg" alt="Foto 1">
-            </div>
-            <div class="card-back">
-                <p>
-                    La verdad ese día me la pasé increíble contigo.
-                    Sentí que conectamos mucho y tu compañía fue muy linda. 
-                    Yo estaba nervioso, sí, pero feliz. 
-                    Fuimos a comer McDonald’s y hasta nos dieron el mismo juguete
-                    porque ya no había más. Aun así, fue un día muy especial para mí.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-inner">
-            <div class="card-front">
-                <img src="images/Sam_yo.jpeg" alt="Foto 2">
-            </div>
-            <div class="card-back">
-                <p>
-                    Ese abrazo que nos dimos se me quedó grabado para siempre. 
-                    Fue algo simple, pero para mí lo fue todo; 
-                    ese día fue de los mejores que he vivido y hasta hoy
-                    lo recuerdo con mucho amor.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-inner">
-            <div class="card-front">
-                <img src="images/Primeras_flores.jpeg" alt="Foto 3">
-            </div>
-            <div class="card-back">
-                <p>
-                    Recuerdo las primeras flores que te regalé,
-                    y fue ahí cuando me diste mi primer beso.
-                    Ese momento siempre lo voy a llevar en el corazón.
-                </p>
-            </div>
-        </div>
-    </div>
 
 </section>
 
@@ -181,31 +122,6 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-</h2>
-    <video controls autoplay muted loop>
-        <source src="images/sam_manejando.mp4" type="video/mp4">
-        Tu navegador no soporta videos.
-    </video>
-</section>
-
-
-    <!-- SECCIÓN FINAL -->
-    <section class="section reveal">
-        <h2>Gracias por existir</h2>
-        <p>
-            Hay personas que llegan suave,  
-            como música bonita de fondo.
-        </p>
-    </section>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
 
 
 
