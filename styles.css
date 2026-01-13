@@ -171,3 +171,16 @@ video {
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
+/* LETRA BONITA */
+.elegant-text {
+    font-family: 'Playfair Display', serif; /* letra elegante */
+    font-weight: 400;
+    color: #2c3e50; /* azul oscuro suave */
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+/* Fuente de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
