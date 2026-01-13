@@ -161,3 +161,12 @@ body {
     line-height: 1.6;
     color: #444;
 }
+
+video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
