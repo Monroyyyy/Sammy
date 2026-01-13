@@ -3,42 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuerdos</title>
+    <title>Para Ti ✨</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- CONTENEDOR PRINCIPAL -->
-    <div class="timeline">
+    <!-- HERO -->
+    <section class="hero">
+        <h1 class="fade-in">Para alguien especial</h1>
+        <p class="fade-in delay">Esto lo hice con cariño 🤍 (dos días sin descansar)</p>
+    </section>
 
-        <!-- ITEM 1 -->
-        <div class="item">
-            <div class="flip" onclick="this.classList.toggle('active')">
-                <div class="front">
-                    <img src="./images/Sam_con_flash.jpeg" alt="Recuerdo 1">
-                </div>
-                <div class="back">
-                    <p>
-                        Esta foto guarda un momento especial,
-                        uno de esos instantes que se sienten
-                        tranquilos y sinceros.
-                    </p>
-                </div>
+    <!-- SECCIÓN TEXTO -->
+    <section class="section reveal">
+        <h2>Un dato random, siempre que hablaba de ti decía "Chamy" de cariño jsjsj :p </h2>
+        <p>
+            A veces no se trata de decir mucho,  
+            sino de sentirlo bonito.
+        </p>
+    </section>
+
+    <!-- GALERÍA -->
+<section class="gallery reveal">
+
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="images/Sam_con_flash.jpeg" alt="Foto 1">
+            </div>
+            <div class="card-back">
+                <p>
+                    En verdad este día me la pasé increible contigo
+                    sentí que conectamos mucho, tu compañía fue linda
+                    Obvio yo siempre andaba nervioso cuando estaba contigo.
+                </p>
             </div>
         </div>
+    </div>
 
-        <!-- ITEM 2 -->
-        <div class="item">
-            <div class="flip" onclick="this.classList.toggle('active')">
-                <div class="front">
-                    <img src="./images/foto2.jpeg" alt="Recuerdo 2">
-                </div>
-                <div class="back">
-                    <p>
-                        A veces no hace falta decir mucho,
-                        una imagen puede contar toda una historia.
-                    </p>
-                </div>
-            <
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="images/foto2.jpg" alt="Foto 2">
+            </div>
+            <div class="card-back">
+                <p>
+                    Aquí entendí que a veces
+                    una mirada dice más
+                    que mil palabras.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="images/foto3.jpg" alt="Foto 3">
+            </div>
+            <div class="card-back">
+                <p>
+                    Un recuerdo suave,
+                    de esos que no se olvidan
+                    aunque pase el tiempo.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+    <!-- SECCIÓN FINAL -->
+    <section class="section reveal">
+        <h2>Gracias por existir</h2>
+        <p>
+            Hay personas que llegan suave,  
+            como música bonita de fondo.
+        </p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
